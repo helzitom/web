@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(love_blur.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body, div, p,ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    --bg-color: rgba(236, 116, 190, 0.759);
+    --text-color: #444;
+    --card-color: #fff;
+    --dark-color: #ae5b23;
+}
+
+.card {
+    max-width: clamp(320px, 50%, 400px);
+    max-height: 2000px;
+    margin: 200px auto;
+    position: relative;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.card__front, .card__back {
+    backface-visibility: hidden;
+    background-color: var(--bg-color);
+    transition: transform 1s;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 6px;
+    box-shadow:  10px 10px #d519b944;
+}
+
+.card__front {
+    transform: perspective(1200px) rotateY(0deg);
+}
+
+.card__back {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    padding: 12px;
+    transform: perspective(1200px) rotateY(180deg);
+}
+
+.card__gif, .card__back-img{
+    max-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+
+.card__gif img, .card__back-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card__text {
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-wrap-style: stable;
+}
+
+.card_btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_si {
+    font-weight: 700;
+}
+
+.btn_no-msg {
+    display: none;
+    list-style: none;
+    margin: 5px;
+}
+
+.btn_si, .btn_no {
+    margin: 5px;
+    padding: 10px 20px;
+    list-style: none;
+    border: 1px solid #000;
+    border-radius: 20px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.btn_si:hover, .btn_no:hover {
+    background-color: var(--bg-color);
+    color: var(--card-color);
+}
+
+.kiss {
+    font-weight: 700;
+}
+
